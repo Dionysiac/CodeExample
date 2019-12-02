@@ -80,7 +80,7 @@ class ExpandingPanel extends React.Component<MyProps, MyState> {
         }
 
         return (
-            <View style={styles.container} >
+            <Animated.View style={[styles.container, {height: this.state.animation}]} >
                 <View style={styles.titleContainer} onLayout={this._setMinHeight.bind(this)}>
                     <Text style={styles.title}>{this.state.title}</Text>
                     <TouchableHighlight
@@ -96,7 +96,7 @@ class ExpandingPanel extends React.Component<MyProps, MyState> {
                 <View style={styles.body} onLayout={this._setMaxHeight.bind(this)}>
                     {this.props.children}
                 </View>
-            </View>
+            </Animated.View>
         );
     }
 };
