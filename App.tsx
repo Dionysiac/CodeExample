@@ -2,18 +2,26 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
 import ExpandingPanel from './components/expanding-panel';
+import CommentaryItem from './components/commentary-item'
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.mainView}>
         <ScrollView>
-          <Text>"A thing happened at this time. It was REALLY GOOD"</Text>
-          <Text>"A thing happened at this time. It was REALLY GOOD"</Text>
-          <Text>"A thing happened at this time. It was REALLY GOOD"</Text>
-          <Text>"A thing happened at this time. It was REALLY GOOD"</Text>
-          <Text>"A thing happened at this time. It was REALLY GOOD"</Text>
-          <Text>"A thing happened at this time. It was REALLY GOOD"</Text>
+        <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
+          <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
+          <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
+          <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
+          <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
+          <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
+          <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
+          <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
+          <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
+          <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
+          <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
+          <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
+          <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
         </ScrollView>
       </View>
       <View style={styles.bottomDrawer}>
