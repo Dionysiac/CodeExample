@@ -9,7 +9,7 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.mainView}>
         <ScrollView>
-        <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
+          <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD A thing happened at this time. It was REALLY GOOD A thing happened at this time. It was REALLY GOOD A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
           <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
           <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
           <CommentaryItem itemDescription={"A thing happened at this time. It was REALLY GOOD"} itemMinute={12} />
@@ -61,7 +61,7 @@ export default function App() {
               <Text style={styles.keyMomentText}>15</Text>
               <Text style={styles.keyMomentText}>Key Moment</Text>
             </View>
-            
+
           </ScrollView>
         </ExpandingPanel>
       </View>
