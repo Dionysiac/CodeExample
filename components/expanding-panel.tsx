@@ -41,14 +41,12 @@ class ExpandingPanel extends React.Component<MyProps, MyState> {
     }
 
     _setMaxHeight(event) {
-        debugger;
         this.setState({
             maxHeight: event.nativeEvent.layout.height
         });
     }
 
     _setMinHeight(event) {
-        debugger;
         this.setState({
             minHeight: event.nativeEvent.layout.height
         });
@@ -56,7 +54,6 @@ class ExpandingPanel extends React.Component<MyProps, MyState> {
 
     toggleExpanded() {
         // start and end values flip depending on expanded state
-        debugger;
         /* 
         end value for open animations has extra height added as the calculated value 
         from the onLayout seems to fall short. Then when calculating the other way it causes a jump in
