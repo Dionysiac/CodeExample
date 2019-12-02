@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
+import ExpandingPanel from './components/expanding-panel';
+
 export default function App() {
   return (
     <View style={styles.container}>
@@ -15,11 +17,13 @@ export default function App() {
         </ScrollView>
       </View>
       <View style={styles.bottomDrawer}>
-        <ScrollView>
-          <Text>Key Moment</Text>
-          <Text>Key Moment</Text>
-          <Text>Key Moment</Text>
-        </ScrollView>
+        <ExpandingPanel title="Key Moments">
+          <ScrollView>
+            <Text>Key Moment</Text>
+            <Text>Key Moment</Text>
+            <Text>Key Moment</Text>
+          </ScrollView>
+        </ExpandingPanel>
       </View>
     </View>
   );
