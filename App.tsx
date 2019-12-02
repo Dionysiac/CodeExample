@@ -1,10 +1,26 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <View style={styles.mainView}>
+        <ScrollView>
+          <Text>"A thing happened at this time. It was REALLY GOOD"</Text>
+          <Text>"A thing happened at this time. It was REALLY GOOD"</Text>
+          <Text>"A thing happened at this time. It was REALLY GOOD"</Text>
+          <Text>"A thing happened at this time. It was REALLY GOOD"</Text>
+          <Text>"A thing happened at this time. It was REALLY GOOD"</Text>
+          <Text>"A thing happened at this time. It was REALLY GOOD"</Text>
+        </ScrollView>
+      </View>
+      <View style={styles.bottomDrawer}>
+        <ScrollView>
+          <Text>Key Moment</Text>
+          <Text>Key Moment</Text>
+          <Text>Key Moment</Text>
+        </ScrollView>
+      </View>
     </View>
   );
 }
@@ -12,8 +28,20 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center"
   },
+  mainView: {
+    flex: 1,
+    flexGrow: 5,
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    marginTop: 60
+  },
+  bottomDrawer: {
+    flex: 1,
+    backgroundColor: "#ffa",
+    justifyContent: "flex-end",
+    alignItems: "stretch"
+  }
 });
+
