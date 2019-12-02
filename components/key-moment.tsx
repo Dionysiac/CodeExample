@@ -10,6 +10,7 @@ type MyProps = {
     itemMinute: number;
     itemDescription: string;
     onPress: () => void;
+    key: string;
 }
 
 type MyState = {
