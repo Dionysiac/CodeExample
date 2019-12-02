@@ -142,10 +142,13 @@ export default function App() {
       </View>
       <View style={styles.bottomDrawer}>
         <ExpandingPanel title="Key Moments">
-          <ScrollView>
-            
-            <KeyMoment itemMinute={90} itemDescription={"GOAL: West Ham 3-2 Man Utd"} onPress={()=>{this.commentaryList.scrollToLocation({itemIndex:15, sectionIndex:0,viewPosition:0.5})}} />
-
+          <ScrollView >
+            {dummyData.map((item,index) => {
+              debugger;
+              if(item.isKeyMoment===true) {
+                return(<KeyMoment key={item.key} itemMinute={item.time} itemDescription={item.keyMomentTitle} onPress={()=>{this.commentaryList.scrollToLocation({itemIndex:index, sectionIndex:0,viewPosition:0.5})}} />);
+              }
+            })}
           </ScrollView>
         </ExpandingPanel>
       </View>
