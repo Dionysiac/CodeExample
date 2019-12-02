@@ -142,7 +142,7 @@ export default function App() {
       </View>
       <View style={styles.bottomDrawer}>
         <ExpandingPanel title="Key Moments">
-          <ScrollView >
+          <ScrollView style={{height:200}}>
             {dummyData.map((item,index) => {
               debugger;
               if(item.isKeyMoment===true) {

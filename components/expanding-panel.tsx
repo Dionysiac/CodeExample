@@ -54,17 +54,9 @@ class ExpandingPanel extends React.Component<MyProps, MyState> {
 
     toggleExpanded() {
         // start and end values flip depending on expanded state
-        /* 
-        end value for open animations has extra height added as the calculated value 
-        from the onLayout seems to fall short. Then when calculating the other way it causes a jump in
-        height befor shrinking. Have looked in debugger and can see that the values passed in the onLayout 
-        event are different depending on direction. 
-        I think it might be something to do with the child scroll view not reporting required size correctly when shrunk, but thats 
-        just a guess really. 
-        Quick fix is to add some extra height on the way up.
-        */
-        let startValue = this.state.expanded ? this.state.maxHeight  : this.state.minHeight,
-            endValue = this.state.expanded ? this.state.minHeight : this.state.maxHeight + 200; 
+        
+        let startValue = this.state.expanded ? this.state.maxHeight + this.state.minHeight : this.state.minHeight,
+            endValue = this.state.expanded ? this.state.minHeight : this.state.maxHeight + this.state.minHeight; 
 
         this.setState({
             expanded: !this.state.expanded  //reverse the state
