@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, SectionList } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, SectionList, TouchableHighlight } from 'react-native';
 
 import ExpandingPanel from './components/expanding-panel';
 import CommentaryItem from './components/commentary-item'
@@ -131,8 +131,9 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.mainView}>
         <SectionList
-          sections={[{title:"Live Commentary",data:dummyData}]}
-          renderItem={({ item }) => <CommentaryItem itemMinute={item.time} itemDescription={item.description}/>}
+          ref={ref => this.commentaryList = ref}
+          sections={[{ title: "Live Commentary", data: dummyData }]}
+          renderItem={({ item }) => <CommentaryItem itemMinute={item.time} itemDescription={item.description} />}
           renderSectionHeader={({ section: { title } }) => (
             <Text style={styles.header}>{title}</Text>
           )}
@@ -141,10 +142,15 @@ export default function App() {
       <View style={styles.bottomDrawer}>
         <ExpandingPanel title="Key Moments">
           <ScrollView>
-            <View style={styles.keyMoment}>
+            <TouchableHighlight
+              onPress={()=>{this.commentaryList.scrollToLocation({itemIndex:15, sectionIndex:0,viewPosition:0.5})}}
+              underlayColor="#f1f1f1">
+              <View style={styles.keyMoment}>
               <Text style={styles.keyMomentText}>15</Text>
               <Text style={styles.keyMomentText}>Key Moment</Text>
             </View>
+            </TouchableHighlight>
+            
 
             <View style={styles.keyMoment}>
               <Text style={styles.keyMomentText}>15</Text>
