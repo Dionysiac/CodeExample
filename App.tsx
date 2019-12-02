@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, SectionList, TouchableHighlight } from 'react-native';
 
 import ExpandingPanel from './components/expanding-panel';
-import CommentaryItem from './components/commentary-item'
+import CommentaryItem from './components/commentary-item';
+import KeyMoment from './components/key-moment';
 
 const dummyData = [
   {
@@ -142,45 +143,8 @@ export default function App() {
       <View style={styles.bottomDrawer}>
         <ExpandingPanel title="Key Moments">
           <ScrollView>
-            <TouchableHighlight
-              onPress={()=>{this.commentaryList.scrollToLocation({itemIndex:15, sectionIndex:0,viewPosition:0.5})}}
-              underlayColor="#f1f1f1">
-              <View style={styles.keyMoment}>
-              <Text style={styles.keyMomentText}>15</Text>
-              <Text style={styles.keyMomentText}>Key Moment</Text>
-            </View>
-            </TouchableHighlight>
             
-
-            <View style={styles.keyMoment}>
-              <Text style={styles.keyMomentText}>15</Text>
-              <Text style={styles.keyMomentText}>Key Moment</Text>
-            </View>
-
-            <View style={styles.keyMoment}>
-              <Text style={styles.keyMomentText}>15</Text>
-              <Text style={styles.keyMomentText}>Key Moment</Text>
-            </View>
-
-            <View style={styles.keyMoment}>
-              <Text style={styles.keyMomentText}>15</Text>
-              <Text style={styles.keyMomentText}>Key Moment</Text>
-            </View>
-
-            <View style={styles.keyMoment}>
-              <Text style={styles.keyMomentText}>15</Text>
-              <Text style={styles.keyMomentText}>Key Moment</Text>
-            </View>
-
-            <View style={styles.keyMoment}>
-              <Text style={styles.keyMomentText}>15</Text>
-              <Text style={styles.keyMomentText}>Key Moment</Text>
-            </View>
-
-            <View style={styles.keyMoment}>
-              <Text style={styles.keyMomentText}>15</Text>
-              <Text style={styles.keyMomentText}>Key Moment</Text>
-            </View>
+            <KeyMoment itemMinute={90} itemDescription={"GOAL: West Ham 3-2 Man Utd"} onPress={()=>{this.commentaryList.scrollToLocation({itemIndex:15, sectionIndex:0,viewPosition:0.5})}} />
 
           </ScrollView>
         </ExpandingPanel>
@@ -206,19 +170,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffa",
     justifyContent: "flex-end",
     alignItems: "stretch"
-  },
-  keyMoment: {
-    flex: 1,
-    paddingTop: 10,
-    flexDirection: "row"
-  },
-  keyMomentText: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingTop: 10,
-    fontWeight: "normal",
-    fontSize: 16,
-    textAlign: "center"
   },
   header: {
     fontSize: 32,
