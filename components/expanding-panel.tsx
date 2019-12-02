@@ -15,6 +15,8 @@ type MyProps = {
 type MyState = {
     title: string;
     expanded: boolean;
+    minHeight: number;
+    maxHeight: number;
 }
 
 class ExpandingPanel extends React.Component<MyProps, MyState> {
@@ -30,8 +32,24 @@ class ExpandingPanel extends React.Component<MyProps, MyState> {
 
         this.state = {
             title: props.title,
-            expanded: true, // start open
+            expanded: false, // start closed
+            minHeight: 65,
+            maxHeight: 65,
         };
+    }
+
+    _setMaxHeight(event) {
+        debugger;
+        this.setState({
+            maxHeight: event.nativeEvent.layout.height
+        });
+    }
+
+    _setMinHeight(event) {
+        debugger;
+        this.setState({
+            minHeight: event.nativeEvent.layout.height
+        });
     }
 
     toggleExpanded() {
@@ -47,7 +65,7 @@ class ExpandingPanel extends React.Component<MyProps, MyState> {
 
         return (
             <View style={styles.container} >
-                <View style={styles.titleContainer} >
+                <View style={styles.titleContainer} onLayout={this._setMinHeight.bind(this)}>
                     <Text style={styles.title}>{this.state.title}</Text>
                     <TouchableHighlight
                         onPress={this.toggleExpanded.bind(this)}
@@ -59,7 +77,7 @@ class ExpandingPanel extends React.Component<MyProps, MyState> {
                     </TouchableHighlight>
                 </View>
 
-                <View style={styles.body} >
+                <View style={styles.body} onLayout={this._setMaxHeight.bind(this)}>
                     {this.props.children}
                 </View>
             </View>
@@ -99,6 +117,7 @@ var styles = StyleSheet.create({
         height: 30
     },
     body: {
+        flex: 1,
         padding: 10,
         paddingTop: 0,
        
