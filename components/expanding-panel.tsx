@@ -54,7 +54,8 @@ class ExpandingPanel extends React.Component<MyProps, MyState> {
 
     toggleExpanded() {
         // start and end values flip depending on expanded state
-        
+        // max height is child view + the header view
+        // min height is the header view
         let startValue = this.state.expanded ? this.state.maxHeight + this.state.minHeight : this.state.minHeight,
             endValue = this.state.expanded ? this.state.minHeight : this.state.maxHeight + this.state.minHeight; 
 
