@@ -35,7 +35,7 @@ class CommentaryItem extends React.Component<MyProps, MyState> {
                         <Text style={styles.text}>{this.state.itemMinute}</Text>
                     </View>
                     <View style={styles.vertLine}>
-                        <Image source={lineSource} />
+                        <Image style={styles.image} source={lineSource} />
                     </View>
                 </View>
                 <View style={styles.body}>
@@ -48,7 +48,6 @@ class CommentaryItem extends React.Component<MyProps, MyState> {
 
 export default CommentaryItem;
 
-
 var styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -56,8 +55,9 @@ var styles = StyleSheet.create({
         backgroundColor: "#fff"
     },
     timelineContainer: {
-        flex: 1,
-        flexDirection: "column"
+        flex: -1,
+        flexDirection: "column",
+        paddingLeft: 20
     },
     circle: {
         width: 40,
@@ -73,9 +73,12 @@ var styles = StyleSheet.create({
     vertLine: {
         flex: 1,
         width: 40,
-        height: 40,
         justifyContent: "center",
         alignItems: "center"
+    },
+    image: {
+        flex: 1,
+        width: 3
     },
     body: {
         flex: 1,
