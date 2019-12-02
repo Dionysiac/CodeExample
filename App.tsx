@@ -19,9 +19,41 @@ export default function App() {
       <View style={styles.bottomDrawer}>
         <ExpandingPanel title="Key Moments">
           <ScrollView>
-            <Text>Key Moment</Text>
-            <Text>Key Moment</Text>
-            <Text>Key Moment</Text>
+            <View style={styles.keyMoment}>
+              <Text style={styles.keyMomentText}>15</Text>
+              <Text style={styles.keyMomentText}>Key Moment</Text>
+            </View>
+
+            <View style={styles.keyMoment}>
+              <Text style={styles.keyMomentText}>15</Text>
+              <Text style={styles.keyMomentText}>Key Moment</Text>
+            </View>
+
+            <View style={styles.keyMoment}>
+              <Text style={styles.keyMomentText}>15</Text>
+              <Text style={styles.keyMomentText}>Key Moment</Text>
+            </View>
+
+            <View style={styles.keyMoment}>
+              <Text style={styles.keyMomentText}>15</Text>
+              <Text style={styles.keyMomentText}>Key Moment</Text>
+            </View>
+
+            <View style={styles.keyMoment}>
+              <Text style={styles.keyMomentText}>15</Text>
+              <Text style={styles.keyMomentText}>Key Moment</Text>
+            </View>
+
+            <View style={styles.keyMoment}>
+              <Text style={styles.keyMomentText}>15</Text>
+              <Text style={styles.keyMomentText}>Key Moment</Text>
+            </View>
+
+            <View style={styles.keyMoment}>
+              <Text style={styles.keyMomentText}>15</Text>
+              <Text style={styles.keyMomentText}>Key Moment</Text>
+            </View>
+            
           </ScrollView>
         </ExpandingPanel>
       </View>
@@ -42,10 +74,23 @@ const styles = StyleSheet.create({
     marginTop: 60
   },
   bottomDrawer: {
-    flex: 1,
+    flex: -1,
     backgroundColor: "#ffa",
     justifyContent: "flex-end",
     alignItems: "stretch"
+  },
+  keyMoment: {
+    flex: 1,
+    paddingTop: 10,
+    flexDirection: "row"
+  },
+  keyMomentText: {
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 10,
+    fontWeight: "normal",
+    fontSize: 16,
+    textAlign: "center"
   }
 });
 
