@@ -17,6 +17,7 @@ type MyState = {
     expanded: boolean;
     minHeight: number;
     maxHeight: number;
+    animation: Animated.Value;
 }
 
 class ExpandingPanel extends React.Component<MyProps, MyState> {
@@ -35,6 +36,7 @@ class ExpandingPanel extends React.Component<MyProps, MyState> {
             expanded: false, // start closed
             minHeight: 65,
             maxHeight: 65,
+            animation: new Animated.Value(65), // set starting heights to the min height
         };
     }
 
@@ -53,7 +55,21 @@ class ExpandingPanel extends React.Component<MyProps, MyState> {
     }
 
     toggleExpanded() {
-        // do nothing yet
+        let startValue = this.state.expanded ? this.state.maxHeight + this.state.minHeight  : this.state.minHeight,
+            endValue = this.state.expanded ? this.state.minHeight : this.state.maxHeight + this.state.minHeight; 
+
+        this.setState({
+            expanded: !this.state.expanded  //reverse the state
+        });
+
+        // start the animation
+        this.state.animation.setValue(startValue);
+        Animated.spring(     
+            this.state.animation,
+            {
+                toValue: endValue
+            }
+        ).start(); 
     }
 
     render() {
@@ -117,9 +133,7 @@ var styles = StyleSheet.create({
         height: 30
     },
     body: {
-        flex: 1,
         padding: 10,
         paddingTop: 0,
-       
     }
 });
