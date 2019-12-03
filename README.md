@@ -21,8 +21,6 @@ I have not added a title bar or other navigation/general controls. I considered 
 
 The styling is only an absolute basic grey palette to separate elements and move it on from looking like a wireframe.
 
-An example improvement to the styling would be to have the key moment highlight fade out after scrolling to the location.
-
 In order to take this example UI to production we would need to implement the `getItemLayout` and `onScrollToIndexFailed` props.
 In likely real world usage the number of items in the list could grow enough so that off screen items are unloaded. Then the scroll to key moment function would fail if moving to a item that was outside of the render window.
 

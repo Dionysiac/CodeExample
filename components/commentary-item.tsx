@@ -4,6 +4,7 @@ import {
     Text,
     View,
     Image,
+    Animated
 } from 'react-native';
 
 type MyProps = {
@@ -16,6 +17,7 @@ type MyProps = {
 type MyState = {
     itemMinute: number;
     itemDescription: string;
+    animation: Animated.Value;
 }
 
 class CommentaryItem extends React.Component<MyProps, MyState> {
@@ -24,14 +26,40 @@ class CommentaryItem extends React.Component<MyProps, MyState> {
 
         this.state = {
             itemMinute: props.itemMinute,
-            itemDescription: props.itemDescription
+            itemDescription: props.itemDescription,
+            animation: new Animated.Value(0)
         };
+
+      
     }
+
+
+    componentDidUpdate() {
+        if(this.props.isHighlight){
+            this.state.animation.setValue(0); // always start from zero
+            Animated.timing(this.state.animation, {
+                toValue: 150,
+                duration: 2000
+            }).start();
+        }
+    }
+
 
     render() {
         let lineSource = require('../assets/vert_line.png');
+
+        // hide the line if we are the last item
         let lineStyle = this.props.isLast ? styles.noLine : styles.image;
-        let bodyStyle = this.props.isHighlight ? [styles.body, styles.highlight] : styles.body;
+
+        // do some color range interpolation for our highlight
+        let interpolateColor = this.state.animation.interpolate({
+            inputRange: [0, 150],
+            outputRange: ['rgb(255,202,40)', 'rgb(236,239,241)']
+        })
+        let animatedStyle = {backgroundColor: interpolateColor};
+
+        // if highlight then apply interpolation
+        let bodyStyle = this.props.isHighlight ? [styles.body, animatedStyle] : styles.body;
         return (
             <View style={styles.container}>
                 <View style={styles.timelineContainer}>
@@ -42,9 +70,9 @@ class CommentaryItem extends React.Component<MyProps, MyState> {
                         <Image style={lineStyle} source={lineSource} />
                     </View>
                 </View>
-                <View style={bodyStyle}>
+                <Animated.View style={bodyStyle}>
                     <Text style={styles.text}>{this.state.itemDescription}</Text>
-                </View>
+                </Animated.View>
             </View>
         );
     }
