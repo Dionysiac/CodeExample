@@ -21,7 +21,7 @@ I have not added a title bar or other navigation/general controls. I considered 
 
 The styling is only an absolute basic grey palette to separate elements and move it on from looking like a wireframe.
 
-I considered styling the key moment commentary in the main feed or highlighting them when scrolled to using the key moment selector but decided it was beyond the scope of the exercise.
+An example improvement to the styling would be to have the key moment highlight fade out after scrolling to the location.
 
 In order to take this example UI to production we would need to implement the `getItemLayout` and `onScrollToIndexFailed` props.
 In likely real world usage the number of items in the list could grow enough so that off screen items are unloaded. Then the scroll to key moment function would fail if moving to a item that was outside of the render window.
@@ -34,4 +34,4 @@ I have not used typescript before this exercise so although I have set up types 
 
 No tests have been set up nor did I particularly consider the ability to test the components in their creation. The expanding panel may need to be refactored slightly to aid testability depending on the test framework being used.
 
-I "tested" the example on USB connected Galaxy S7 iOS Simulator 11 Pro Max and an iPhoneX via Expo client. 
+I "tested" the example on USB connected Galaxy S7 iOS Simulator 11 Pro Max and an iPhoneX via Expo client.

@@ -29,9 +29,16 @@ class LiveCommentary extends React.Component<MyProps, MyState> {
         super(props);
 
         this.state = {
-            highlightIndex: -1
+            highlightIndex: -1,
         };
     };
+
+    _higlightAndScroll(index: number) {
+        this.setState({
+            highlightIndex: index
+        });
+        this.commentaryList.scrollToLocation({ itemIndex: index, sectionIndex: 0, viewPosition: 0.5 });
+    }
 
     render() {
         return (
@@ -49,16 +56,16 @@ class LiveCommentary extends React.Component<MyProps, MyState> {
                             />}
                         renderSectionHeader={({ section: { title } }) => (
                             <Text style={styles.header}>{title}</Text>
-                        )}
+                        )} 
+                        extraData={this.state}
                     />
                 </View>
                 <View style={styles.bottomDrawer}>
                     <ExpandingPanel title="Key Moments">
                         <ScrollView style={{ height: 150 }}>
                             {this.props.commentaryData.map((item, index) => {
-                                debugger;
                                 if (item.isKeyMoment === true) {
-                                    return (<KeyMoment key={item.key} itemMinute={item.time} itemDescription={item.keyMomentTitle} onPress={() => { this.commentaryList.scrollToLocation({ itemIndex: index, sectionIndex: 0, viewPosition: 0.5 }) }} />);
+                                    return (<KeyMoment key={item.key} itemMinute={item.time} itemDescription={item.keyMomentTitle} onPress={() => { this._higlightAndScroll(index) }} />);
                                 }
                             })}
                         </ScrollView>

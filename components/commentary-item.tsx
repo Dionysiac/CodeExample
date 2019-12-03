@@ -9,13 +9,13 @@ import {
 type MyProps = {
     itemMinute: number;
     itemDescription: string;
+    isHighlight?: boolean;
     isLast?: boolean;
 }
 
 type MyState = {
     itemMinute: number;
     itemDescription: string;
-    isLast: boolean;
 }
 
 class CommentaryItem extends React.Component<MyProps, MyState> {
@@ -24,14 +24,14 @@ class CommentaryItem extends React.Component<MyProps, MyState> {
 
         this.state = {
             itemMinute: props.itemMinute,
-            itemDescription: props.itemDescription,
-            isLast: (false || props.isLast)
+            itemDescription: props.itemDescription
         };
     }
 
     render() {
         let lineSource = require('../assets/vert_line.png');
-        let lineStyle = this.state.isLast ? styles.noLine : styles.image;
+        let lineStyle = this.props.isLast ? styles.noLine : styles.image;
+        let bodyStyle = this.props.isHighlight ? [styles.body, styles.highlight] : styles.body;
         return (
             <View style={styles.container}>
                 <View style={styles.timelineContainer}>
@@ -42,7 +42,7 @@ class CommentaryItem extends React.Component<MyProps, MyState> {
                         <Image style={lineStyle} source={lineSource} />
                     </View>
                 </View>
-                <View style={styles.body}>
+                <View style={bodyStyle}>
                     <Text style={styles.text}>{this.state.itemDescription}</Text>
                 </View>
             </View>
@@ -98,6 +98,9 @@ var styles = StyleSheet.create({
         marginLeft: 10,
         marginRight: 20,
         borderRadius: 10,
+    },
+    highlight: {
+        backgroundColor: "#FFECB3",
     },
     text: {
         fontSize: 16
