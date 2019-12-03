@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, ScrollView, SectionList } from 'react-native';
+import { 
+    StyleSheet, 
+    Text, 
+    View, 
+    ScrollView, 
+    SectionList 
+} from 'react-native';
 
 import ExpandingPanel from './expanding-panel';
 import CommentaryItem from './commentary-item';
