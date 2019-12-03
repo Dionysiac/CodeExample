@@ -1,13 +1,12 @@
 {
   "expo": {
-    "name": "Fantasec Commentary",
+    "name": "Fantastec Commentary",
     "slug": "FantastecCommentary",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -25,6 +24,9 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "A code example for Fantastec. See README on Github",
+    "owner": "rickhawkins",
+    "githubUrl": "https://github.com/Dionysiac/FantastecCommentary"
   }
 }
