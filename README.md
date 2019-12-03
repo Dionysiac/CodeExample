@@ -13,7 +13,7 @@ Clone repository then
   `yarn start`  
 This will start the local Expo client which will allow you to run on iOS Simulator (requires XCode and command line tools setup) or Android Emulator/Device (requires connected Android device with USB Debugging enabled)
 
-Or using the Expo client app install from https://expo.io/@rickhawkins/FantastecCommentary
+Or using the Expo client app install from https://expo.io/@rickhawkins/FantastecCommentary (Android only)
 
 ## Discussion
 
