@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, SectionList, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, SectionList} from 'react-native';
 
 import ExpandingPanel from './components/expanding-panel';
 import CommentaryItem from './components/commentary-item';
