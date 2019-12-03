@@ -30,6 +30,6 @@ Also a more sophisticated method of loading the data would be implemented. Proba
 
 I have not used typescript before this exercise so although I have set up types for my components props and state I may not have followed best practice or missed some explicit typing where it is using `any`. For example I couldn't find the correct type to use for the `onLayout` event callback so it has resolved to `any`.
 
-No tests have been set up nor did I particularly consider the ability to test the components in their creation. The expanding panel may need to be refactored slightly to aid testability depending on the test framework being used.
+No tests have been set up nor did I particularly consider the ability to test the components in their creation. It's possible that the components may need to be refactored slightly to aid testability depending on the test framework being used.
 
 I "tested" the example on USB connected Galaxy S7 iOS Simulator 11 Pro Max and an iPhoneX via Expo client.
