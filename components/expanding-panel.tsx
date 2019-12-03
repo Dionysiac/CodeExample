@@ -23,7 +23,7 @@ type MyState = {
 class ExpandingPanel extends React.Component<MyProps, MyState> {
     icons: object;
 
-    constructor(props) {
+    constructor(props: MyProps) {
         super(props);
 
         this.icons = {

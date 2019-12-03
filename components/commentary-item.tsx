@@ -19,7 +19,7 @@ type MyState = {
 }
 
 class CommentaryItem extends React.Component<MyProps, MyState> {
-    constructor(props) {
+    constructor(props: MyProps) {
         super(props);
 
         this.state = {
