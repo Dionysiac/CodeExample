@@ -15,6 +15,21 @@ This will start the local Expo client which will allow you to run on iOS Simulat
 
 Or using the Expo client app install from https://expo.io/@rickhawkins/FantastecCommentary (Android only)
 
+### Run on iOS Simulator
+- install XCode, XCode command line tools and xcode-select
+- yarn install, yarn start
+- select "run on iOS simulator" from expo browser window.
+- allow permission for the simulator to launch
+
+Once the simulator has launched it will install Expo client. For the first run you will need to manually start the Expo app on the simulator and allow "open in Expo"
+
+### Run on Android Device
+- install Expo client on device
+- yarn install, yarn start
+- open Expo app and select "Scan QR Code"
+- scan QR code visible on Expo browser window or from https://expo.io/@rickhawkins/FantastecCommentary
+
+
 ## Discussion
 
 I have not added a title bar or other navigation/general controls. I considered using `SafeAreaView` for the main container but as the space this left for controls is unused it looked bad. In a complete app there may be top and bottom bars for navigation these would be easy to adjust for.
