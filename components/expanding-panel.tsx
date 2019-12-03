@@ -86,7 +86,7 @@ class ExpandingPanel extends React.Component<MyProps, MyState> {
                     <Text style={styles.title}>{this.state.title}</Text>
                     <TouchableHighlight
                         onPress={this.toggleExpanded.bind(this)}
-                        underlayColor="#f1f1f1">
+                        underlayColor="#B0BEC5">
                         <Image
                             style={styles.buttonImage}
                             source={icon}
@@ -109,32 +109,28 @@ var styles = StyleSheet.create({
         flex: -1,
         backgroundColor: "#fff",
         overflow: "hidden",
-        marginTop: 5,
         marginBottom: 10,
     },
     titleContainer: {
         flexDirection: "row",
         alignItems: "center",
-        paddingLeft: 10,
-        paddingRight: 10
+        backgroundColor: "#B0BEC5",
     },
     title: {
         flex: 1,
         padding: 20,
-        paddingLeft: 50, // add extra to center text
+        paddingLeft: 70, // add extra to center text
         color: "#2a2f43",
-        backgroundColor: "#f1f1f1",
         fontWeight: "bold",
         fontSize: 20,
         textAlign: "center",
-        alignSelf: "stretch"
     },
     buttonImage: {
         width: 30,
-        height: 30
+        height: 30,
+        marginRight: 20
     },
     body: {
-        padding: 10,
-        paddingTop: 0,
+        padding: 0,
     }
 });

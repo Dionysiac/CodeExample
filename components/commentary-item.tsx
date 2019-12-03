@@ -52,19 +52,19 @@ var styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: "row",
-        backgroundColor: "#fff"
+        backgroundColor: "#CFD8DC"
     },
     timelineContainer: {
         flex: -1,
         flexDirection: "column",
-        paddingLeft: 20
+        paddingLeft: 10
     },
     circle: {
         width: 40,
         height: 40,
         borderRadius: 40 / 2,
-        backgroundColor: "#fff",
-        borderColor: "black",
+        backgroundColor: "#ECEFF1",
+        borderColor: "#263238",
         borderWidth: 3,
         justifyContent: "center",
         alignItems: "center",
@@ -85,7 +85,12 @@ var styles = StyleSheet.create({
         padding: 10,
         paddingTop: 10,
         flexDirection: "row",
-        alignItems: "flex-start"
+        alignItems: "flex-start",
+        backgroundColor: "#ECEFF1",
+        marginBottom: 20,
+        marginLeft: 10,
+        marginRight: 20,
+        borderRadius: 10,
     },
     text: {
         fontSize: 16

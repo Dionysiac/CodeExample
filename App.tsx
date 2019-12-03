@@ -159,25 +159,29 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center"
+    justifyContent: "center",
+    backgroundColor: "#CFD8DC"
   },
   mainView: {
     flex: 1,
     flexGrow: 5,
-    backgroundColor: "#fff",
+    backgroundColor: "#CFD8DC",
     justifyContent: "center",
     marginTop: 60
   },
   bottomDrawer: {
     flex: -1,
-    backgroundColor: "#ffa",
+    backgroundColor: "#CFD8DC",
     justifyContent: "flex-end",
     alignItems: "stretch"
   },
   header: {
     fontSize: 32,
     textAlign: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#546E7A",
+    color: "#fff",
+    padding: 20,
+    marginBottom: 10
   },
 });
 
