@@ -102,7 +102,7 @@ const dummyData = [
     time: 89,
     description: "West Ham's Leanne Kiernan is shown a second yellow for an off-the-ball scuffle and the Hammers will finish this game with 10 players.",
     isKeyMoment: true,
-    keyMomentTitle: "RED CARD (West Ham)"
+    keyMomentTitle: "Red Card (West Ham)"
   },
   {
     key: "15",
@@ -123,7 +123,7 @@ const dummyData = [
     time: 92,
     description: "It's all over. It's a win that'll give West Ham a big lift. What late drama we've seen!",
     isKeyMoment: true,
-    keyMomentTitle: "FULL-TIME - West Ham 3-2 Man Utd"
+    keyMomentTitle: "Full-Time - West Ham 3-2 Man Utd"
   },
 ];
 
@@ -134,7 +134,7 @@ export default function App() {
         <SectionList
           ref={ref => this.commentaryList = ref}
           sections={[{ title: "Live Commentary", data: dummyData }]}
-          renderItem={({ item }) => <CommentaryItem itemMinute={item.time} itemDescription={item.description} />}
+          renderItem={({ item, index }) => <CommentaryItem itemMinute={item.time} itemDescription={item.description} isLast={index===dummyData.length-1}/>}
           renderSectionHeader={({ section: { title } }) => (
             <Text style={styles.header}>{title}</Text>
           )}
